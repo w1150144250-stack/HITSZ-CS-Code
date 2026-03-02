@@ -1,11 +1,11 @@
 # 1. 声明要求的 CMake 最低版本
 cmake_minimum_required(VERSION 3.10)
-
-# 2. 给你的工程起个响亮的名字！
 project(MyAlgorithmPro)
 
-# 3. 核心指令：告诉 CMake，我要把 coin_change.cpp 编译成一个叫 coin_target 的可执行文件
-add_executable(coin_target coin_change.cpp)
+# 🟥 严师的防乱码装甲：强制 GCC 编译器输出 GBK 编码的可执行文件
+if(CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang")
+    add_compile_options(-fexec-charset=GBK)
+endif()
 
-# 如果你以后想单独运行“打家劫舍”，只需要再加一行：
-# add_executable(robber_target house_robber.cpp)
+# 下面是你原本的代码
+add_executable(coin_target coin_change.cpp)
