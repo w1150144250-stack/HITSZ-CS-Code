@@ -9,3 +9,5 @@ endif()
 
 # 下面是你原本的代码
 add_executable(coin_target coin_change.cpp)
+
+add_executable(maze_bfs maze_bfs.cpp)
