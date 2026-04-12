@@ -11,3 +11,5 @@ endif()
 add_executable(coin_target coin_change.cpp)
 
 add_executable(maze_bfs maze_bfs.cpp)
+
+add_executable(permute_target permutations.cpp)
