@@ -13,3 +13,5 @@ add_executable(coin_target coin_change.cpp)
 add_executable(maze_bfs maze_bfs.cpp)
 
 add_executable(dfs dfs.cpp)
+
+add_executable(n_queens n_queens.cpp)
