@@ -24,6 +24,18 @@ public:
     LinkedList() {
         head = nullptr;
     }
+    
+    ~LinkedList() {
+        Node* current = head;
+        
+        while (current != nullptr) {
+            Node* next = current->next;
+            delete current;
+            current = next;
+        }
+
+        cout << "链表内存已成功释放！\n";
+    }
 
     // ----------------------------------------------------
     // 🟥 你的主战场：实现下面这两个极其基础的函数
