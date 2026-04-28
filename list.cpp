@@ -42,13 +42,12 @@ public:
 
     // 【TODO 2: 遍历打印】从头走到尾，打印出所有元素
     void printList() {
-        // 提示：你不能直接移动 head，否则你永远找不到起点。
-        // 你需要一个“游标指针”代替你往下走，直到游标指向 nullptr 为止。
         Node* current = head;
         while (current != nullptr) {
-            cout << current->data << endl;
-            current = current->next;
+        cout << current->data << " -> ";
+        current = current->next;
         }
+        cout << "NULL\n"; // 循环结束后，补上结尾和 \n
     }
 };
 
