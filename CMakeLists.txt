@@ -15,3 +15,5 @@ add_executable(maze_bfs maze_bfs.cpp)
 add_executable(dfs dfs.cpp)
 
 add_executable(n_queens n_queens.cpp)
+
+add_executable(list list.cpp)
