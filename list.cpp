@@ -52,6 +52,51 @@ public:
         head = newNode;
     }
 
+    void append(int val) {
+        Node* newNode = new Node(val);
+        Node* current = head;
+
+        if (head == nullptr) {
+            head = newNode;
+            return;
+        }
+
+        while (current->next != nullptr) {
+            current = current->next;
+        }
+        current->next = newNode;
+    }
+
+    void deleteNode(int val) {
+        if (head == nullptr) {
+            cout << "链表为空，无法删除！\n";
+            return;
+        }
+
+        Node* current = head;
+        Node* prevNode = head;
+
+        if (head->data == val) {
+            Node* temp = head;
+            head = head->next;
+            delete temp;
+            return;
+        }
+
+        while (current != nullptr && current->data != val) {
+            prevNode = current;
+            current = current->next;
+        }
+
+        if (current == nullptr) {
+            cout << "没有找到要删除的节点\n";
+            return;
+        } else {
+            Node* next = current->next;
+            delete current;
+            prevNode->next = next;
+        }
+    }
     // 【TODO 2: 遍历打印】从头走到尾，打印出所有元素
     void printList() {
         Node* current = head;
@@ -69,10 +114,17 @@ int main() {
     list.prepend(30);
     list.prepend(20);
     list.prepend(10);
+    list.append(40);
 
     // 预期输出: 10 -> 20 -> 30 -> NULL
     cout << "当前链表为: ";
     list.printList(); 
+
+    list.deleteNode(20);
+    list.deleteNode(10);
+    list.deleteNode(100);
+
+    list.printList();
 
     return 0;
 }
